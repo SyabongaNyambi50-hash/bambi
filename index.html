@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Girlfriend Application Form - 2026 💕</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffeef8 0%, #e8e0ff 100%);
+      font-family: 'Nunito', sans-serif;
+      color: #4a4a68;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .app-card {
+      width: 100%;
+      max-width: 650px;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
+      padding: 35px 30px;
+      position: relative;
+      border: 3px solid #fff;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe3ec;
+      color: #ff477e;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Fredoka', cursive;
+      color: #ff5c8a;
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+
+    .meta-details {
+      font-size: 0.85rem;
+      color: #8e8ea7;
+      line-height: 1.5;
+    }
+
+    .progress-container {
+      width: 100%;
+      background: #f0f0f8;
+      height: 10px;
+      border-radius: 10px;
+      margin: 20px 0 30px 0;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+
+    .step {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-family: 'Fredoka', cursive;
+      color: #ff5c8a;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .field-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #3b3b58;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #eedff0;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+      background: #faf8fc;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #ff7eb3;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .option-btn {
+      position: relative;
+    }
+
+    .option-btn input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .option-label {
+      display: block;
+      padding: 10px 14px;
+      background: #faf8fc;
+      border: 2px solid #eedff0;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .option-btn input:checked + .option-label {
+      background: #ffe6ef;
+      border-color: #ff5c8a;
+      color: #ff5c8a;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 10px;
+    }
+
+    .btn {
+      font-family: 'Fredoka', cursive;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .btn-prev {
+      background: #eef0f8;
+      color: #7a7a9a;
+    }
+
+    .btn-next, .btn-submit {
+      background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+      color: #fff;
+      box-shadow: 0 6px 15px rgba(255, 117, 140, 0.4);
+    }
+
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-card">
+    <div class="header">
+      <span class="badge">Official Application • 2026</span>
+      <h1>GIRLFRIEND APPLICATION FORM</h1>
+      <p class="meta-details">
+        <b>Position:</b> My Girlfriend | <b>Department:</b> Heart & Happiness <br>
+        <b>Fee:</b> R0.00 — <i>No wasting time allowed! 💖</i>
+      </p>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <!-- REPLACE 'YOUR_FORMSPREE_ENDPOINT' WITH YOUR ACTUAL FORMSPREE LINK -->
+    <form id="mqpawynl" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" onsubmit="handleFormSubmit(event)">
+
+      <!-- STEP 1: PERSONAL INFORMATION & HISTORY -->
+      <div class="step active">
+        <div class="section-title">🌸 Section 1 & 2: Personal Info & History</div>
+
+        <div class="field-group">
+          <label>Full Name</label>
+          <input type="text" name="Full Name" placeholder="Your beautiful name..." required>
+        </div>
+
+        <div class="field-group">
+          <label>Age & Occupation</label>
+          <div style="display:flex; gap:10px;">
+            <input type="number" name="Age" placeholder="Age" style="width: 30%;" required>
+            <input type="text" name="Occupation" placeholder="What do you do?" style="width: 70%;" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Where are you from?</label>
+          <input type="text" name="Hometown" placeholder="City / Hometown" required>
+        </div>
+
+        <div class="field-group">
+          <label>Relationship Status</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Relationship Status" value="Single" checked>
+              <span class="option-label">Single</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Relationship Status" value="Complicated">
+              <span class="option-label">Complicated</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Relationship Status" value="Basically broken up">
+              <span class="option-label">"Basically broken up"</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Are you completely over your ex?</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Over Ex" value="Yes" checked>
+              <span class="option-label">Yes 💯</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Over Ex" value="No">
+              <span class="option-label">No</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Over Ex" value="Still check page">
+              <span class="option-label">I still check their page</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: EQ & COMMUNICATION -->
+      <div class="step">
+        <div class="section-title">💬 Section 3 & 4: Emotional Intelligence & Communication</div>
+
+        <div class="field-group">
+          <label>When you're angry with your partner, what do you do?</label>
+          <textarea name="When Angry Action" placeholder="Tell me honestly..."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Can you communicate when upset instead of disappearing?</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Communicates When Upset" value="Absolutely" checked>
+              <span class="option-label">Absolutely</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Communicates When Upset" value="Need time">
+              <span class="option-label">I need time, but I will</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Communicates When Upset" value="Disappear 3 days">
+              <span class="option-label">Disappear 3 business days</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>How often do you like communicating with your partner?</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Communication Frequency" value="All day" checked>
+              <span class="option-label">All day</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Communication Frequency" value="Throughout day">
+              <span class="option-label">Throughout the day</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Communication Frequency" value="Morning & Evening">
+              <span class="option-label">Morning & Evening</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: RED FLAGS & RATINGS -->
+      <div class="step">
+        <div class="section-title">🚩 Section 5 & 6: Transparency & Self-Ratings</div>
+
+        <div class="field-group">
+          <label>Do you entertain other men while in a relationship?</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Entertains Others" value="No" checked>
+              <span class="option-label">No, never!</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Entertains Others" value="Sometimes">
+              <span class="option-label">Sometimes</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Entertains Others" value="Like attention">
+              <span class="option-label">I just like attention</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>What is your biggest red flag?</label>
+          <input type="text" name="Biggest Red Flag" placeholder="Be honest here! 😉">
+        </div>
+
+        <div class="field-group">
+          <label>Rate your Loyalty / Romance / Humor (1 to 10)</label>
+          <div style="display:flex; gap:10px;">
+            <input type="number" name="Rating Loyalty" placeholder="Loyalty" min="1" max="10">
+            <input type="number" name="Rating Romance" placeholder="Romance" min="1" max="10">
+            <input type="number" name="Rating Humor" placeholder="Humor" min="1" max="10">
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: LOVE LANGUAGES & FINAL INTERVIEW -->
+      <div class="step">
+        <div class="section-title">💌 Section 8, 10 & Final Interview</div>
+
+        <div class="field-group">
+          <label>What is your primary Love Language?</label>
+          <select name="Love Language">
+            <option>Words of Affirmation</option>
+            <option>Quality Time</option>
+            <option>Physical Touch</option>
+            <option>Acts of Service</option>
+            <option>Gifts</option>
+            <option selected>All of the above ✨</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label>Why should I choose you over other applicants? 😉</label>
+          <textarea name="Pitch Reason" placeholder="Give me your best pitch..."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>What is your idea of a perfect date?</label>
+          <textarea name="Perfect Date Idea" placeholder="Describe it..."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Can you apologize without saying "but you..."?</label>
+          <div class="options-grid">
+            <label class="option-btn">
+              <input type="radio" name="Apologizes Cleanly" value="Yes" checked>
+              <span class="option-label">Yes absolutely</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Apologizes Cleanly" value="No">
+              <span class="option-label">No</span>
+            </label>
+            <label class="option-btn">
+              <input type="radio" name="Apologizes Cleanly" value="Attacked">
+              <span class="option-label">I feel attacked already</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Row -->
+      <div class="btn-row">
+        <button type="button" class="btn btn-prev" id="prevBtn" onclick="changeStep(-1)" style="visibility:hidden;">Previous</button>
+        <button type="button" class="btn btn-next" id="nextBtn" onclick="handleNextOrSubmit(event)">Next Step ✨</button>
+      </div>
+
+    </form>
+
+    <!-- SUCCESS SCREEN -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">💌</div>
+      <h2 style="font-family:'Fredoka', cursive; color:#ff5c8a; font-size: 2rem;">Application Submitted!</h2>
+      <p style="margin: 15px 0; color:#6a6a8a; line-height: 1.6;">
+        Your application has been received and sent directly to <b>HR (Me)</b> for evaluation! <br><br>
+        <i>Status:</i> <span style="background: #e1f5fe; color: #0288d1; padding: 4px 12px; border-radius: 12px; font-weight: 800;">SHORTLISTED FOR INTERVIEW</span>
+      </p>
+      <p style="font-size: 0.85rem; color: #aaa;">Please stand by for communication regarding the probation period. 😉</p>
+    </div>
+
+  </div>
+
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.step');
+    const progressBar = document.getElementById('progressBar');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const form = document.getElementById('applicationForm');
+
+    function updateForm() {
+      steps.forEach((step, idx) => {
+        step.classList.toggle('active', idx === currentStep);
+      });
+
+      const progress = ((currentStep + 1) / steps.length) * 100;
+      progressBar.style.width = progress + '%';
+
+      prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+      
+      if (currentStep === steps.length - 1) {
+        nextBtn.innerText = 'Submit Application 💖';
+        nextBtn.className = 'btn btn-submit';
+      } else {
+        nextBtn.innerText = 'Next Step ✨';
+        nextBtn.className = 'btn btn-next';
+      }
+    }
+
+    function changeStep(direction) {
+      currentStep += direction;
+      updateForm();
+    }
+
+    function handleNextOrSubmit(e) {
+      e.preventDefault();
+      if (currentStep === steps.length - 1) {
+        submitToFormspree();
+      } else {
+        changeStep(1);
+      }
+    }
+
+    function submitToFormspree() {
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('successScreen').style.display = 'block';
+        } else {
+          alert("Oops! There was a problem submitting your application.");
+        }
+      }).catch(error => {
+        alert("Oops! There was a problem submitting your application.");
+      });
+    }
+
+    updateForm();
+  </script>
+</body>
+</html>
